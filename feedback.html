@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1a202c;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .notice {
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.5;
+            padding: 12px 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            color: #2d3748;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .char-count {
+            font-size: 12px;
+            color: #718096;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .success-title {
+            font-size: 28px;
+            color: #1a202c;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="formSection">
+            <div class="header">
+                <div class="header-top">
+                    <img src="your-logo-url-here.png" alt="Logo" class="logo">
+                    <div class="header-text">
+                        <h1>Your Feedback Matters</h1>
+                        <p class="subtitle">Your valuable feedback is important to us</p>
+                    </div>
+                </div>
+                <div class="notice">
+                    This is an invite-only program. Any unauthorized submission will not be considered for reward. You are welcome to submit your feedback though.
+                </div>
+            </div>
+
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="source">Where did you first hear about us? *</label>
+                    <select id="source" name="source" required>
+                        <option value="">Select an option</option>
+                        <option value="social-media">Social Media</option>
+                        <option value="friend-referral">Friend/Referral</option>
+                        <option value="search-engine">Search Engine</option>
+                        <option value="advertisement">Advertisement</option>
+                        <option value="blog-article">Blog/Article</option>
+                        <option value="email">Email</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Have you used the product for at least 30 days? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="used-yes" name="used30days" value="yes" required>
+                            <label for="used-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="used-no" name="used30days" value="no">
+                            <label for="used-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Your Feedback * (minimum 250 characters)</label>
+                    <textarea id="feedback" name="feedback" required minlength="250"></textarea>
+                    <div class="char-count"><span id="charCount">0</span> / 250 characters</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you recommend the product to others? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="recommend-yes" name="recommend" value="yes" required>
+                            <label for="recommend-yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="recommend-no" name="recommend" value="no">
+                            <label for="recommend-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+
+        <div id="successMessage" class="success-message">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Thank You!</h2>
+            <p class="success-text">Your submission has been recorded. Our sales executive might contact you via email for any further details.</p>
+        </div>
+    </div>
+
+    <script>
+        const feedbackTextarea = document.getElementById('feedback');
+        const charCount = document.getElementById('charCount');
+        const form = document.getElementById('feedbackForm');
+        const formSection = document.getElementById('formSection');
+        const successMessage = document.getElementById('successMessage');
+
+        feedbackTextarea.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (feedbackTextarea.value.length < 250) {
+                alert('Please provide at least 250 characters of feedback.');
+                return;
+            }
+
+            formSection.style.display = 'none';
+            successMessage.classList.add('show');
+        });
+    </script>
+</body>
+</html>
